@@ -6,15 +6,15 @@
             <h2 class="title1">SignUp Here</h2>
             <div class="sign-up-row widget-shadow">
                 <h5>Personal Information :</h5>
-                <form method="POST" action="{{ route('admin.register.store') }}">
+                <form method="POST" action="{{ route('admin.registertemplate.store') }}">
                     @csrf
 
                     <div class="sign-u">
-                        <input id="name" type="name" class=" {{$errors->has('name') ?  'is-invalid' : ''}} " name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                        <input id="name" type="text" class=" {{$errors->has('name') ?  'is-invalid' : ''}} " name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                     @if ($errors->has('name'))
                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name' }}</strong>
+                                        <strong>{{ $errors->first('name') }}</strong>
                                     </span>
                         @endif
                         <div class="clearfix"> </div>
@@ -26,7 +26,7 @@
 
                     @if ($errors->has('email'))
                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email' }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                         @endif
                         <div class="clearfix"> </div>
