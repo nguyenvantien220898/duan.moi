@@ -6,7 +6,7 @@
             <h2 class="title1">SignUp Here</h2>
             <div class="sign-up-row widget-shadow">
                 <h5>Personal Information :</h5>
-                <form method="POST" action="{{ route('admin.registertemplate.store') }}">
+                <form method="POST" action="{{ route('admin.register.store') }}">
                     @csrf
 
                     <div class="sign-u">
@@ -22,7 +22,7 @@
 
                     <div class="sign-u">
 
-                        <input id="email" type="email" class="{{$errors->has('email') ?  'is-invalid' : ''}} " name="email" value="{{ old('email') }}" required>
+                        <input id="email" type="email" class="{{$errors->has('email') ?  'is-invalid' : ''}} " name="email" value="{{ old('email') }}" required autofocus>
 
                     @if ($errors->has('email'))
                             <span class="invalid-feedback" role="alert">

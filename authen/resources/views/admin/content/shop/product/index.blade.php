@@ -15,7 +15,7 @@
                 <tr>
                     <th>#</th>
                     <th>Tên</th>
-                    <th>Images</th>
+                    <th style="max-width: 150px">Images</th>
                     <th>Giá niêm yết</th>
                     <th>Giá bán</th>
                     <th>Tồn kho</th>
@@ -24,11 +24,22 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 @foreach($products as $product)
                     <tr>
                         <th scope="row">{{$product->id}}</th>
                         <td>{{$product->name}}</td>
-                        <td>{{$product->images}}</td>
+                        <td>
+                            <?php
+                            $images=isset($product->images) ? json_decode($product->images): array();
+                            ?>
+                            @if(!empty($images))
+                                @foreach($images as $image)
+                                    <img  src="{{asset($image)}}" style="margin-top:15px;max-height:100px;">
+                                @endforeach
+                            @endif
+
+                        </td>
                         <td>{{$product->priceCore}}</td>
                         <td>{{$product->priceSale}}</td>
                         <td>{{$product->stock}}</td>

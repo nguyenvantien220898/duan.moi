@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="acb15a5a-6911-438c-a740-18374f212d68" name="Default Changelist" comment="dsdsdsds">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authen/resources/views/admin/auth/logintemplate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/authen/resources/views/admin/auth/logintemplate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authen/resources/views/admin/auth/registertemplate.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/authen/resources/views/admin/auth/registertemplate.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/submit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/submit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,35 +23,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/auth/logintemplate.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
-              <folding>
-                <element signature="e#80#139#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/auth/registertemplate.blade.php">
+        <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
+            <state relative-caret-position="4070">
+              <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
               <folding>
-                <element signature="e#80#121#0#HTML" expanded="true" />
+                <element signature="e#3204#3245#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/authen/app/Http/Controllers/AdminController.php">
+        <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+            <state relative-caret-position="208">
+              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+              <folding>
+                <element signature="e#1465#1506#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopProductController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="96" selection-start-line="96" selection-end-line="96" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authen/public/vendor/laravel-filemanager/js/lfm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="93" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/submit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="348">
+              <caret line="154" column="30" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="92" />
+              <folding>
+                <element signature="e#2706#2747#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,6 +116,7 @@
       <find>$customer</find>
       <find>$shipper</find>
       <find>$cat</find>
+      <find>http://localhost:81/duan.moi/authen/public/laravel-filemanager</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -131,10 +157,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/authen/resources/views/admin/content/shop/category/submit.blade.php" />
         <option value="$PROJECT_DIR$/authen/resources/views/admin/content/shop/category/edit.blade.php" />
-        <option value="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/submit.blade.php" />
-        <option value="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/edit.blade.php" />
         <option value="$PROJECT_DIR$/authen/resources/views/admin/content/content/category/edit.blade.php" />
         <option value="$PROJECT_DIR$/authen/resources/views/admin/content/content/category/submit.blade.php" />
         <option value="$PROJECT_DIR$/authen/resources/views/admin/content/content/page/submit.blade.php" />
@@ -171,7 +194,6 @@
         <option value="$PROJECT_DIR$/authen/app/Http/Controllers/Admin/MenuItemController.php" />
         <option value="$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopBrandController.php" />
         <option value="$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopCategoryController.php" />
-        <option value="$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopProductController.php" />
         <option value="$PROJECT_DIR$/authen/resources/views/admin/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/authen/resources/views/admin/content/users/index.blade.php" />
         <option value="$PROJECT_DIR$/authen/app/Http/Controllers/Auth/Admin/LoginController.php" />
@@ -182,6 +204,10 @@
         <option value="$PROJECT_DIR$/authen/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/authen/resources/views/admin/auth/logintemplate.blade.php" />
         <option value="$PROJECT_DIR$/authen/resources/views/admin/auth/registertemplate.blade.php" />
+        <option value="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/index.blade.php" />
+        <option value="$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopProductController.php" />
+        <option value="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/submit.blade.php" />
+        <option value="$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -289,7 +315,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -312,16 +337,31 @@
               <item name="duan.moi" type="b2602c69:ProjectViewProjectNode" />
               <item name="duan.moi" type="462c0819:PsiDirectoryNode" />
               <item name="authen" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="duan.moi" type="b2602c69:ProjectViewProjectNode" />
               <item name="duan.moi" type="462c0819:PsiDirectoryNode" />
               <item name="authen" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="duan.moi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="duan.moi" type="462c0819:PsiDirectoryNode" />
+              <item name="authen" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel-filemanager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="duan.moi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="duan.moi" type="462c0819:PsiDirectoryNode" />
+              <item name="authen" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="laravel-filemanager" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="duan.moi" type="b2602c69:ProjectViewProjectNode" />
@@ -351,12 +391,34 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="duan.moi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="duan.moi" type="462c0819:PsiDirectoryNode" />
+              <item name="authen" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="duan.moi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="duan.moi" type="462c0819:PsiDirectoryNode" />
+              <item name="authen" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="content" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -426,7 +488,8 @@
       <workItem from="1564897904102" duration="391000" />
       <workItem from="1564898397271" duration="2638000" />
       <workItem from="1564902561859" duration="1104000" />
-      <workItem from="1564913332987" duration="2174000" />
+      <workItem from="1564913332987" duration="8338000" />
+      <workItem from="1564971085860" duration="4754000" />
     </task>
     <task id="LOCAL-00001" summary="hrhr">
       <created>1561453497183</created>
@@ -495,13 +558,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170317000" />
+    <option name="totallyTimeSpent" value="181235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1613" height="873" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49798116" weight="0.45822784" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49798116" visible="true" weight="0.19742765" />
       <window_info id="Favorites" order="1" sideWeight="0.50201887" side_tool="true" weight="0.2527331" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -558,33 +621,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="dsdsdsds" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/authen/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authen/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-704">
-          <caret line="178" column="55" lean-forward="true" selection-start-line="178" selection-start-column="55" selection-end-line="178" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/content/media/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="e#264#332#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/authen/public/admin_assets/images/1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/authen/config/lfm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -782,13 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopCategoryController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -876,9 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/auth/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -888,14 +914,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/authen/app/Http/Controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
+        <state relative-caret-position="308">
           <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/auth/logintemplate.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
+        <state relative-caret-position="1210">
           <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
           <folding>
             <element signature="e#80#139#0#HTML" expanded="true" />
@@ -905,10 +931,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/auth/registertemplate.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
+        <state relative-caret-position="528">
+          <caret line="24" column="169" selection-start-line="24" selection-start-column="169" selection-end-line="24" selection-end-column="169" />
           <folding>
             <element signature="e#80#121#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/auth/register.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authen/public/vendor/laravel-filemanager/js/lfm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="93" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+          <folding>
+            <element signature="e#1465#1506#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authen/app/Http/Controllers/Admin/ShopProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/submit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="154" column="30" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="92" />
+          <folding>
+            <element signature="e#2706#2747#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/authen/resources/views/admin/content/shop/product/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4070">
+          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
+          <folding>
+            <element signature="e#3204#3245#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
