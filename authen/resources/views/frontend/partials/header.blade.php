@@ -1,4 +1,5 @@
 <div class="header-top-w3layouts">
+
     <div class="container">
         <div class="col-md-6 logo-w3">
             <a href="index.html"><img src="{{asset('frontend_assets/images')}}/logo2.png" alt=" " /><h1>FASHION<span>CLUB</span></h1></a>
@@ -25,74 +26,9 @@
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                    <ul class="nav navbar-nav ">
-                        <li class=" active"><a href="index.html" class="hyper "><span>Home</span></a></li>
-                        <li class="dropdown ">
-                            <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Clothing<b class="caret"></b></span></a>
-                            <ul class="dropdown-menu multi">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
 
-                                            <li><a href="women.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Women's Clothing</a></li>
-                                            <li><a href="men.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's Clothing</a></li>
-                                            <li><a href="kids.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Kid's Wear</a></li>
-                                            <li><a href="party.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Party Wear</a></li>
+                    <?php echo $fe_menus_items_header_html ?>
 
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
-                                            <li><a href="casuals.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Casuals</a></li>
-                                            <li><a href="night.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Night Wear</a></li>
-                                            <li><a href="formals.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Formals</a></li>
-                                            <li><a href="inner.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Inner Wear</a></li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-4 w3l">
-                                        <a href="women.html"><img src="{{asset('frontend_assets/images')}}/menu1.jpg" class="img-responsive" alt=""></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span> Personal Care <b class="caret"></b></span></a>
-                            <ul class="dropdown-menu multi multi1">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
-                                            <li><a href="jewellery.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Jewellery </a></li>
-                                            <li><a href="watches.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Watches</a></li>
-                                            <li><a href="cosmetics.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cosmetics</a></li>
-                                            <li><a href="deos.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Deo & Perfumes</a></li>
-
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4">
-
-                                        <ul class="multi-column-dropdown">
-                                            <li><a href="haircare.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Hair Care </a></li>
-                                            <li><a href="shoes.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Shoes</a></li>
-                                            <li><a href="handbags.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Handbags</a></li>
-                                            <li><a href="skincare.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Skin care</a></li>
-
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4 w3l">
-                                        <a href="jewellery.html"><img src="{{asset('frontend_assets/images')}}/menu2.jpg" class="img-responsive" alt=""></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </ul>
-                        </li>
-                        <li><a href="about.html" class="hyper"><span>About</span></a></li>
-                        <li><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
-                    </ul>
                 </div>
             </nav>
         </div>

@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Admin\ContentCategoryModel;
+use App\Model\Admin\ContentPageModel;
+use App\Model\Admin\ContentPostModel;
+use App\Model\Admin\ContentTagModel;
 use App\Model\Admin\MenuItemModel;
 use App\Model\Admin\MenuModel;
+use App\Model\Admin\ShopCategoryModel;
+use App\Model\Admin\ShopProductModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -24,6 +30,8 @@ class MenuItemController extends Controller
     public function index(){
         $items = DB::table('menu_items')->paginate(5);
 
+        $items=MenuItemModel::getMenuItemRecursive();
+
         /**
          * Đây là biến truyền từ controller xuống view
          */
@@ -43,6 +51,14 @@ class MenuItemController extends Controller
         $data['types'] = MenuItemModel::getTypeOfMenuItem();
 
         $data['menus'] = MenuModel::all();
+        $data['menuitems'] = MenuItemModel::getMenuItemRecursive();
+
+        $data['shop_categories']=ShopCategoryModel::all();
+        $data['shop_product']=ShopProductModel::all();
+        $data['content_categories']=ContentCategoryModel::all();
+        $data['content_tags']=ContentTagModel::all();
+        $data['content_pages']=ContentPageModel::all();
+        $data['content_posts']=ContentPostModel::all();
 
         return view('admin.content.menuitem.submit',$data);
     }
@@ -57,6 +73,18 @@ class MenuItemController extends Controller
         $data['menu']=$item;
 
 
+        $data['types'] = MenuItemModel::getTypeOfMenuItem();
+
+        $data['menus'] = MenuModel::all();
+        $data['menuitems'] = MenuItemModel::getMenuItemRecursiveExcept($id);
+
+        $data['shop_categories']=ShopCategoryModel::all();
+        $data['shop_products']=ShopProductModel::all();
+        $data['content_categories']=ContentCategoryModel::all();
+        $data['content_tags']=ContentTagModel::all();
+        $data['content_pages']=ContentPageModel::all();
+        $data['content_posts']=ContentPostModel::all();
+
         return view('admin.content.menuitem.edit',$data);
     }
 
@@ -64,9 +92,10 @@ class MenuItemController extends Controller
         /**
          * Đây là biến truyền từ controller xuống view
          */
-        $data=array();
+
 
         $item=MenuItemModel::find($id);
+        $data=array();
         $data['menu']=$item;
 
         return view('admin.content.menuitem.delete',$data);
@@ -87,20 +116,91 @@ class MenuItemController extends Controller
 
         $item= new MenuItemModel();
 
+        $params=array();
+
+        $types=MenuItemModel::getTypeOfMenuItem();
+        foreach ($types as $type_key=>$type){
+            $params['params_'.$type_key]=isset($input['params_'.$type_key]) ? $input['params_'.$type_key]:'';
+
+        }
+        $params_json=json_encode($params);
+
+
+
         $item->name =$input['name'];
+        $item->sort =isset($input['sort']) ?(int) $input['sort']:0;
         $item->type =isset($input['type']) ? $input['type']:0;
-        $item->params =isset($input['params']) ? $input['params']:0;
-        $item->link =isset($input['link']) ? $input['link']:0;
+
+        /*
+           $types[1] = 'Shop Category';
+           $types[2] = 'Shop Product';
+           $types[3] = 'Content Category';
+           $types[4] = 'Content Post';
+           $types[5] = 'Content Page';
+           $types[6] = 'Content Tag';
+           $types[7] = 'Custom Link';
+        */
+
+        $final_link = '';
+        switch ($item->type) {
+            case 1:
+                $final_link = '/shop/category/'.(int)$params['params_1'];
+                break;
+            case 2:
+                $final_link = '/shop/product/'.(int)$params['params_2'];
+                break;
+            case 3:
+                $final_link = '/content/category/'.(int)$params['params_3'];
+                break;
+            case 4:
+                $final_link = '/content/post/'.(int)$params['params_4'];
+                break;
+            case 5:
+                $final_link = '/page/'.(int)$params['params_5'];
+                break;
+            case 6:
+                $final_link = '/content/tag/'.(int)$params['params_6'];
+                break;
+            case 7:
+                $final_link = $params['params_7'];
+                break;
+            default:
+                $final_link = '';
+                break;
+        }
+
+        $item->params =$params_json;
+        $item->link =isset($input['link']) ? $input['link']:'';
         $item->desc =$input['desc'];
-        $item->icon =isset($input['icon']) ? $input['icon']:0;
+        $item->icon =isset($input['icon']) ? $input['icon']:'';
         $item->menu_id =isset($input['menu_id']) ? $input['menu_id']:0;
         $item->parent_id =isset($input['parent_id']) ? $input['parent_id']:0;
 
 
 
+
         $item->save();
 
-        return redirect('/admin/menu');
+
+
+        if ($item->parent_id >0){
+        /**
+         * cập nhập tổng số bản ghi con cho menu cha
+          */
+        /**
+        * đếm tổng số menu item có cha là parent_id
+         */
+
+            $total=DB::table('menu_items')->where('parent_id',$item->parent_id )->count();
+
+            $parent= MenuItemModel::find($item->parent_id );
+            $parent->total=(int)$total;
+            $parent->save();
+
+        }
+
+
+        return redirect('/admin/menuitems');
     }
 
     public function update(Request $request,$id){
@@ -119,19 +219,112 @@ class MenuItemController extends Controller
 
         $item= MenuItemModel::find($id);
 
+        /*
+         * Kiểm tra xem có đổi parent_id không
+         */
+        if ($item->parent_id!=$input['parent_id']){
+            $change_parent=true;
+        }else{
+            $change_parent=false;
+        }
+
+        $old_parent_id=$item->parent_id;
+
+
+
+        $params=array();
+
+        $types=MenuItemModel::getTypeOfMenuItem();
+        foreach ($types as $type_key=>$type){
+            $params['params_'.$type_key]=isset($input['params_'.$type_key]) ? $input['params_'.$type_key]:'';
+
+        }
+        $params_json=json_encode($params);
+
         $item->name =$input['name'];
+        $item->sort =isset($input['sort']) ?(int) $input['sort']:0;
         $item->type =isset($input['type']) ? $input['type']:0;
-        $item->params =isset($input['params']) ? $input['params']:0;
-        $item->link =isset($input['link']) ? $input['link']:0;
+        switch ($item->type) {
+            case 1:
+                $final_link = '/shop/category/'.(int)$params['params_1'];
+                break;
+            case 2:
+                $final_link = '/shop/product/'.(int)$params['params_2'];
+                break;
+            case 3:
+                $final_link = '/content/category/'.(int)$params['params_3'];
+                break;
+            case 4:
+                $final_link = '/content/post/'.(int)$params['params_4'];
+                break;
+            case 5:
+                $final_link = '/page/'.(int)$params['params_5'];
+                break;
+            case 6:
+                $final_link = '/content/tag/'.(int)$params['params_6'];
+                break;
+            case 7:
+                $final_link = $params['params_7'];
+                break;
+            default:
+                $final_link = '';
+                break;
+        }
+        $item->params =$params_json;
+        $item->link =$final_link;
         $item->desc =$input['desc'];
-        $item->icon =isset($input['icon']) ? $input['icon']:0;
+        $item->icon =isset($input['icon']) ? $input['icon']:'';
         $item->menu_id =isset($input['menu_id']) ? $input['menu_id']:0;
         $item->parent_id =isset($input['parent_id']) ? $input['parent_id']:0;
 
 
+
+
+
+
         $item->save();
 
-        return redirect('/admin/menu');
+        if($change_parent==true){
+
+            if ($old_parent_id>0){
+                /**
+                 * trước khi save
+                 * đếm tổng số menu item có cha là parent_id
+                 */
+                $total_old=DB::table('menu_items')->where('parent_id',$old_parent_id  )->count();
+                /*
+                 * cập nhập tổng số bản ghi con cho menu cha
+                 */
+                $old_parent= MenuItemModel::find($old_parent_id);
+                $old_parent->total=(int)$total_old;
+                $old_parent->save();
+            }
+
+
+        }
+
+        if ($item->parent_id>0){
+            /*
+         * đếm tổng số menu item có cha là parent_id
+         */
+
+            $total=DB::table('menu_items')->where('parent_id',$item->parent_id  )->count();
+
+
+            /*
+             * cập nhập tổng số bản ghi con cho menu cha
+             */
+            $parent= MenuItemModel::find($item->parent_id );
+            $parent->total=(int)$total;
+            $parent->save();
+
+        }
+
+
+
+
+
+        return redirect('/admin/menuitems');
 
     }
 
@@ -139,7 +332,7 @@ class MenuItemController extends Controller
         $item = MenuItemModel::find($id);
         $item->delete();
 
-        return redirect('/admin/menu');
+        return redirect('/admin/menuitems');
 
     }
 }

@@ -25,7 +25,11 @@
                     <tr>
                         <th scope="row">{{$menu->id}}</th>
                         <td>{{$menu->name}}</td>
-                        <td>{{$menu->location}}</td>
+                        <td>
+                            @if(isset($locations[$menu->location]))
+                            {{$locations[$menu->location]}}
+                            @endif
+                        </td>
                         <td>
                             <a href="{{url('admin/menu/'.$menu->id.'/edit')}}"class="btn btn-warning">Sửa</a>
                             <a href="{{url('admin/menu/'.$menu->id.'/delete')}}"class="btn btn-danger">Xóa</a>

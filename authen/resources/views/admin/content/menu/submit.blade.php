@@ -1,6 +1,6 @@
 @extends('admin.layouts.glance')
 @section('title')
-    quản trị nội dung
+    Quản trị nội dung
 @endsection
 @section('content')
     <h1>Thêm mới menu</h1>
@@ -31,6 +31,19 @@
                         <input type="text" name="slug" value="{{old('slug')}}" class="form-control1" id="focusedinput" placeholder="Default Input">
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Locations</label>
+                    <div class="col-sm-8">
+                        <select name="location">
+                            <option value="0">Không hiện</option>
+                            @foreach($locations as $key_local => $location)
+                                <option value="{{$key_local}}">{{$location}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>
                     <div class="col-sm-8">

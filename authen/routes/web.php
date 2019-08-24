@@ -11,14 +11,69 @@
 |
 */
 
-Route::get('/', function () {
-    //return view('welcome');
-    return view('frontend.homepage.index');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+/**
+ * Home page route
+ */
+
+Route::get('/','Frontend\HomepageController@index');
+
+/**
+ * Frontend route shop category
+ */
+
+Route::get('shop/category/{id}','Frontend\ShopCategoryController@detail');
+
+/**
+ * Frontend route cart giỏ hàng
+ */
+
+Route::get('shop/cart','Frontend\ShopCartController@index');
+
+
+/**
+ * Frontend route payment
+ */
+
+Route::get('shop/payment','Frontend\ShopPaymentController@index');
+
+/**
+ * Frontend route shop product
+ */
+
+Route::get('shop/product/{id}','Frontend\ShopProductController@detail');
+
+
+
+/**
+ * Frontend route CMS page
+ */
+
+Route::get('page/{id}','Frontend\ContentPageController@detail');
+
+/**
+ * Frontend route content category
+ */
+
+Route::get('content/category/{id}','Frontend\ContentCategoryController@detail');
+
+
+/**
+ * Frontend route content tag
+ */
+
+Route::get('content/tag/{id}','Frontend\ContentTagController@detail');
+
+/**
+ * Frontend route shop product
+ */
+
+Route::get('content/post/{id}','Frontend\ContentPostController@detail');
+
+
+
 
 /**
  * route cho admin
@@ -92,7 +147,7 @@ Route::prefix('admin')->group(function (){
         return view('admin.content.shop.seller.index');
     });
 
-    /*--------route shipper--------------*/
+    /*--------route seller--------------*/
 
     Route::get('shop/seller','Admin\SellerManagerController@index');
     Route::get('shop/seller/create','Admin\SellerManagerController@create');

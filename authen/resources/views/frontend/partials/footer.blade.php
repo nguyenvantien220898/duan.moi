@@ -33,9 +33,23 @@
         <div class="col-md-3 footer-grids fgd4">
             <h4>My Account</h4>
             <ul>
-
-                <li><a href="login.html">Login</a></li>
-                <li><a href="register.html">Register</a></li>
+                @guest
+                    <li>
+                        <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li>
+                            <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                @else
+                    <li>
+                        <a href="{{ route('logout') }}">{{ Auth::user()->name }} {{ __('Logout') }}</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                @endguest
                 <li><a href="recommended.html">Recommended </a></li>
                 <li><a href="payment.html">Payments</a></li>
             </ul>

@@ -19,6 +19,10 @@ class MenuController extends Controller
     public  function __construct()
     {
         $this->middleware('auth:admin');
+
+        $locations=MenuModel::getMenuLocations();
+
+        view()->share('locations',$locations);
     }
     public function index(){
         $items = DB::table('menus')->paginate(5);
