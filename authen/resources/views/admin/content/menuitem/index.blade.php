@@ -26,7 +26,7 @@
                 @foreach($menuitems as $item)
                     <tr>
                         <th scope="row">{{$item['id']}}</th>
-                        <td>{{str_repeat('-',$item['level'] - 1). '' .$item['name']}}</td>
+                        <td>{{str_repeat('-',$item['level']). '' .$item['name']}}</td>
                         <td>{{$item['parent_id']}}</td>
                         <td>{{$item['menu_id']}}</td>
                         <td>
@@ -38,6 +38,8 @@
                 @endforeach
                 </tbody>
             </table>
+
         </div>
     </div>
+
 @endsection

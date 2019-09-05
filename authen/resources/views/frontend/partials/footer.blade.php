@@ -1,7 +1,7 @@
 <div class="footer">
     <div class="container">
         <div class="col-md-3 footer-grids fgd1">
-            <a href="index.html"><img src="{{asset('frontend_assets/images')}}/logo2.png" alt=" " /><h3>FASHION<span>CLUB</span></h3></a>
+            <a href="{{url('/')}}"><img src="{{asset($fe_global_settings['footer_logo'])}}" alt=" " /><h3><?php echo ($fe_global_settings['web_name'])?></h3></a>
             <ul>
                 <li>1234k Avenue, 4th block,</li>
                 <li>New York City.</li>
@@ -59,21 +59,21 @@
     </div>
 </div>
 <!-- cart-js -->
-<script src="{{asset('frontend_assets/js/minicart.js')}}"></script>
-<script>
-    w3ls1.render();
+{{--<script src="{{asset('fontend_assets/js/minicart.js')}}"></script>--}}
+{{--<script>--}}
+{{--    w3ls1.render();--}}
 
-    w3ls1.cart.on('w3sb1_checkout', function (evt) {
-        var items, len, i;
+{{--    w3ls1.cart.on('w3sb1_checkout', function (evt) {--}}
+{{--        var items, len, i;--}}
 
-        if (this.subtotal() > 0) {
-            items = this.items();
+{{--        if (this.subtotal() > 0) {--}}
+{{--            items = this.items();--}}
 
-            for (i = 0, len = items.length; i < len; i++) {
-                items[i].set('shipping', 0);
-                items[i].set('shipping2', 0);
-            }
-        }
-    });
-</script>
+{{--            for (i = 0, len = items.length; i < len; i++) {--}}
+{{--                items[i].set('shipping', 0);--}}
+{{--                items[i].set('shipping2', 0);--}}
+{{--            }--}}
+{{--        }--}}
+{{--    });--}}
+{{--</script>--}}
 <!-- //cart-js -->

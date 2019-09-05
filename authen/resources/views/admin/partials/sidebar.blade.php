@@ -28,7 +28,7 @@
                         <ul class="treeview-menu">
                             <li><a href="{{url('/admin/shop/category')}}"><i class="fa fa-angle-right"></i> Danh mục </a></li>
                             <li><a href="{{url('/admin/shop/product')}}"><i class="fa fa-angle-right"></i>Sản phẩm</a></li>
-                            <li><a href="{{url('/admin/shop/oder')}}"><i class="fa fa-angle-right"></i>Đơn hàng</a></li>
+                            <li><a href="{{url('/admin/shop/order')}}"><i class="fa fa-angle-right"></i>Đơn hàng</a></li>
                             <li><a href="{{url('/admin/shop/review')}}"><i class="fa fa-angle-right"></i>Đánh giá</a></li>
                             <li><a href="{{url('/admin/shop/customer')}}"><i class="fa fa-angle-right"></i>Khách hàng</a></li>
                             <li><a href="{{url('/admin/shop/shipper')}}"><i class="fa fa-angle-right"></i>Nhà vận chuyển</a></li>
@@ -40,11 +40,11 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-laptop"></i>
-                            <span>Oder</span>
+                            <span>Order</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{url('/admin/oder')}}"><i class="fa fa-angle-right"></i>Đặt sản phẩm</a></li>
+                            <li><a href="{{url('/admin/order')}}"><i class="fa fa-angle-right"></i>Đặt sản phẩm</a></li>
                         </ul>
                     </li>
                     <li class="treeview">
@@ -109,11 +109,11 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-laptop"></i>
-                            <span>Newletters</span>
+                            <span>newsletters</span>
                             <i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{url('/admin/newletters')}}"><i class="fa fa-angle-right"></i>New letters</a></li>
+                            <li><a href="{{url('/admin/newsletters')}}"><i class="fa fa-angle-right"></i>New letters</a></li>
 
                         </ul>
                     </li>

@@ -25,7 +25,7 @@
                     <tr>
                         <th scope="row">{{$brand->id}}</th>
                         <td>{{$brand->name}}</td>
-                        <td>{{$brand->images}}</td>
+                        <td>{{$brand->image}}</td>
                         <td>
                             <a href="{{url('admin/shop/brand/'.$brand->id.'/edit')}}"class="btn btn-warning">Sửa</a>
                             <a href="{{url('admin/shop/brand/'.$brand->id.'/delete')}}"class="btn btn-danger">Xóa</a>

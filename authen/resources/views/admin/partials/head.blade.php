@@ -118,7 +118,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             });*/
 
             var editor_config = {
-                path_absolute : "http://localhost:81/lar.tuto/authen/public/",
+                path_absolute : "http://localhost:81/duan.moi/authen/public/",
                 selector: "textarea.mytinymce",
                 plugins: [
                     "advlist autolink lists link image charmap print preview hr anchor pagebreak",
@@ -157,5 +157,6 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
         });
     </script>
+
     <!-- //requried-jsfiles-for owl -->
 </head>

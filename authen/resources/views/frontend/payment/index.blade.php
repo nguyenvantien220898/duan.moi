@@ -161,8 +161,8 @@
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Total</th>
+                            <th>Giá SP</th>
+                            <th>Giá SL</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -288,12 +288,12 @@
                         <div class="row">
                             <div class="col-50">
                                 <h3>Billing Address</h3>
-                                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                                <label for="fname"><i class="fa fa-user"></i> Tên</label>
                                 <input type="text" id="fname" name="customer_name" placeholder="John M. Doe">
                                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
                                 <input type="text" id="email" name="customer_email" placeholder="john@example.com">
-                                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                                <input type="text" id="adr" name="customer_address" placeholder="542 W. 15th Street">
+                                <label for="adr"><i class="fa fa-address-card-o"></i> Địa chỉ</label>
+                                <input type="text" id="adr" name="customer_address" placeholder="Hà Nội">
                             </div>
 
                             <div class="col-50">
@@ -305,23 +305,23 @@
                                     <i class="fa fa-cc-mastercard" style="color:red;"></i>
                                     <i class="fa fa-cc-discover" style="color:orange;"></i>
                                 </div>
-                                <label for="city"><i class="fa fa-institution"></i> City</label>
+                                <label for="city"><i class="fa fa-institution"></i> Thành phố</label>
                                 <input type="text" id="city" name="customer_city" placeholder="New York">
 
                                 <div class="row">
                                     <div class="col-50">
-                                        <label for="state">Country</label>
+                                        <label for="state">Quốc gia</label>
                                         <input type="text" id="customer_country" name="customer_country" placeholder="VN">
                                     </div>
                                     <div class="col-50">
-                                        <label for="zip">Phone</label>
-                                        <input type="text" id="customer_phone" name="customer_phone" placeholder="0981234567">
+                                        <label for="zip">Số điện thoại</label>
+                                        <input type="text" id="customer_phone" name="customer_phone" placeholder="0972277598">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <label for="cname">Note</label>
+                            <label for="cname">Ghi chú</label>
                             <textarea name="customer_note" style="width: 100%" rows="10"></textarea>
                         </div>
                         <input type="submit" value="Continue to checkout" class="btn">

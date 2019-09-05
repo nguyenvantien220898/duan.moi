@@ -17,7 +17,7 @@ class MenuItemModel extends Model
 
         if (count($input_categories) > 0) {
             foreach ($input_categories as $key=>$category){
-                $category=(array) $category;
+                $category =(array) $category;
 
                 if ($category['parent_id'] == $parent_id){
                     $category['level'] = $lv1;
@@ -26,7 +26,7 @@ class MenuItemModel extends Model
 
                     $new_parent_id = $category['id'];
                     $new_level = $lv1 + 1;
-                    self::OutputLevelCategories($input_categories,$output_category,$new_parent_id,$new_level);
+                    self::OutputLevelCategories($input_categories,$output_categories,$new_parent_id,$new_level);
                 }
             }
         }
@@ -78,7 +78,6 @@ class MenuItemModel extends Model
 
 
         return $result;
-
 
     }
 

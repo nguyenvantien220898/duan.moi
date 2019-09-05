@@ -19,6 +19,9 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 
 Route::get('/','Frontend\HomepageController@index');
+Route::get('/search','Frontend\SearchController@index');
+Route::post('/newsletter','Frontend\NewsletterController@store');
+Route::get('/newsletter','Frontend\NewsletterController@index');
 
 /**
  * Frontend route shop category
@@ -31,6 +34,10 @@ Route::get('shop/category/{id}','Frontend\ShopCategoryController@detail');
  */
 
 Route::get('shop/cart','Frontend\ShopCartController@index');
+Route::post('shop/cart/add','Frontend\ShopCartController@add');
+Route::post('shop/cart/update','Frontend\ShopCartController@update');
+Route::post('shop/cart/remove','Frontend\ShopCartController@remove');
+Route::post('shop/cart/clear','Frontend\ShopCartController@clear');
 
 
 /**
@@ -38,6 +45,8 @@ Route::get('shop/cart','Frontend\ShopCartController@index');
  */
 
 Route::get('shop/payment','Frontend\ShopPaymentController@index');
+Route::post('shop/payment','Frontend\ShopPaymentController@order');
+Route::get('shop/payment/after','Frontend\ShopPaymentController@afterOrder');
 
 /**
  * Frontend route shop product
@@ -114,9 +123,16 @@ Route::prefix('admin')->group(function (){
     Route::post('shop/product/{id}','Admin\ShopProductController@update');
     Route::post('shop/product/{id}/delete','Admin\ShopProductController@destroy');
 
-    Route::get('shop/oder',function (){
-        return view('admin.content.shop.oder.index');
-    });
+
+    Route::get('shop/order','Admin\ShopOrderController@index');
+    Route::get('shop/order/{id}/edit','Admin\ShopOrderController@edit');
+    Route::get('shop/order/{id}/delete','Admin\ShopOrderController@delete');
+
+    Route::post('shop/order/{id}','Admin\ShopOrderController@update');
+    Route::post('shop/order/{id}/delete','Admin\ShopOrderController@destroy');
+
+
+
     Route::get('shop/review',function (){
         return view('admin.content.shop.review.index');
     });
@@ -181,8 +197,8 @@ Route::prefix('admin')->group(function (){
     /**
      * ----------------route oder---------------------
      */
-    Route::get('oder',function (){
-        return view('admin.content.oder.index');
+    Route::get('order',function (){
+        return view('admin.content.shop.order.index');
     });
     /**
      * ----------------route content---------------------
@@ -289,26 +305,37 @@ Route::prefix('admin')->group(function (){
     /**
      * ----------------route admin global setting--------------------
      */
-    Route::get('config',function (){
-        return view('admin.content.config.index');
-    });
 
     Route::get('config','Admin\ConfigController@index');
-    Route::post('config/','Admin\ConfigController@store');
+    Route::post('config','Admin\ConfigController@store');
     ;
 
     /**
     * ----------------route admin new letters-------------------
      */
-    Route::get('newletters',function (){
-        return view('admin.content.newletters.index');
-    });
+
+    Route::get('newsletters','Admin\NewslettersController@index');
+    Route::get('newsletters/create','Admin\NewslettersController@create');
+    Route::get('newsletters/{id}/edit','Admin\NewslettersController@edit');
+    Route::get('newsletters/{id}/delete','Admin\NewslettersController@delete');
+
+    Route::post('newsletters','Admin\NewslettersController@store');
+    Route::post('newsletters/{id}','Admin\NewslettersController@update');
+    Route::post('newsletters/{id}/delete','Admin\NewslettersController@destroy');
+
     /**
      * ----------------route admin banners------------------
      */
-    Route::get('banners',function (){
-        return view('admin.content.banners.index');
-    });
+
+
+    Route::get('banners','Admin\BannerController@index');
+    Route::get('banners/create','Admin\BannerController@create');
+    Route::get('banners/{id}/edit','Admin\BannerController@edit');
+    Route::get('banners/{id}/delete','Admin\BannerController@delete');
+
+    Route::post('banners','Admin\BannerController@store');
+    Route::post('banners/{id}','Admin\BannerController@update');
+    Route::post('banners/{id}/delete','Admin\BannerController@destroy');
     /**
      * ----------------route admin contacts------------------
      */

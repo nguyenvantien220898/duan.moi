@@ -12,28 +12,35 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row">
-
-                        @foreach($posts as $post)
-                            <!-- post -->
-                                <div class="col-md-12">
-                                    <div class="post post-row">
-                                        <a class="post-img" href="{{url('content/post/'.$post->id)}}"><img src="{{asset($post->images)}}" alt=""></a>
-                                        <div class="post-body">
-                                            <div class="post-meta">
-                                                <span class="post-date">{{$post->created_at}}</span>
+                        @if($posts->count()>0)
+                            @foreach($posts as $post)
+                                <!-- post -->
+                                    <div class="col-md-12">
+                                        <div class="post post-row">
+                                            <a class="post-img" href="{{url('content/post/'.$post->id)}}"><img src="{{asset($post->images)}}" alt=""></a>
+                                            <div class="post-body">
+                                                <div class="post-meta">
+                                                    <span class="post-date">{{$post->created_at}}</span>
+                                                </div>
+                                                <h3 class="post-title"><a href="{{url('content/post/'.$post->id)}}">{{$post->name}}</a></h3>
+                                                <p><?php echo $post->intro?></p>
                                             </div>
-                                            <h3 class="post-title"><a href="{{url('content/post/'.$post->id)}}">{{$post->name}}</a></h3>
-                                            <p><?php echo $post->intro?></p>
                                         </div>
                                     </div>
+                                    <!-- /post -->
+                                @endforeach
+                                <div class="col-md-12">
+                                    <div class="section-row" style="text-align: center">
+                                        {{ $posts->links() }}
+                                    </div>
                                 </div>
-                                <!-- /post -->
-                            @endforeach
-                            <div class="col-md-12">
-                                <div class="section-row" style="text-align: center">
-                                    {{ $posts->links() }}
+                            @else
+                                <div class="col-md-12">
+                                    <div class="section-row" style="text-align: center">
+                                        <h2>Không có bài viết </h2>
+                                    </div>
                                 </div>
-                            </div>
+                            @endif
                         </div>
                     </div>
 

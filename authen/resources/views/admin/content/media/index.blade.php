@@ -7,6 +7,6 @@
 
 
     <div style="margin-top: 30px">
-        <iframe src="http://localhost:81/lar.tuto/authen/public/laravel-filemanager" style="width: 100%; height: 1000px; overflow: hidden; border: none;"></iframe>
+        <iframe src="http://localhost:81/duan.moi/authen/public/laravel-filemanager" style="width: 100%; height: 1000px; overflow: hidden; border: none;"></iframe>
     </div>
 @endsection

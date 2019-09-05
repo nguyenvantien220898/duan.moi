@@ -29,12 +29,23 @@
                         <input type="text" name="slug" class="form-control1" id="focusedinput" value="{{$cat->slug}}" placeholder="Default Input">
                     </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Images</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Hình ảnh</label>
                     <div class="col-sm-8">
-                        <input type="text" name="images" class="form-control1" id="focusedinput" value="{{$cat->images}}" placeholder="Default Input">
+
+                        <span class="input-group-btn">
+                         <a id="lfm" data-input="thumbnai" data-preview="holder" class="lfm-btn btn btn-primary">
+                           <i class="fa fa-picture-o"></i> Choose
+                         </a>
+
+                        </span>
+                        <input id="thumbnai" class="form-control" type="text" name="images" value="{{$cat->images}}" placeholder="Hình ảnh">
+
+                        <img id="holder" src="{{asset($cat->images)}}" style="margin-top:15px;max-height:100px;">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>
                     <div class="col-sm-8">
@@ -52,5 +63,12 @@
             </form>
         </div>
     </div>
+    <script src="{{asset('/vendor/laravel-filemanager/js/lfm.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var domain = "http://localhost:81/duan.moi/authen/public/laravel-filemanager";
+            $('.lfm-btn').filemanager('image', {prefix: domain});
 
+        });
+    </script>
 @endsection

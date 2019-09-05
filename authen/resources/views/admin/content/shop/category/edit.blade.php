@@ -6,6 +6,7 @@
     <h1>Sửa danh mục {{$cat->id. ':' .$cat->name}}</h1>
     <div class="row">
         <div class="form-three widget-shadow">
+
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -30,28 +31,30 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Images</label>
+                    <label for="focusedinput" class="col-sm-2 control-label">Homepage</label>
                     <div class="col-sm-8">
-                        <input type="text" name="images" class="form-control1" id="focusedinput" value="{{$cat->images}}" placeholder="Default Input">
+                        <select name="homepage">
+                            <option value="0"<?php echo($cat->homepage == 0) ? 'selected' : ''?>>Không</option>
+                            <option value="1"<?php echo($cat->homepage == 1) ? 'selected' : ''?>>Có</option>
+                        </select>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Images {{ $i }}</label>
-                    <div class="col-sm-8">
 
-                       <span class="input-group-btn">
-                         <a id="lfm{{$i}}" data-input="thumbnail{{$i}}" data-preview="holder{{$i}}" class="lfm-btn btn btn-primary">
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Images</label>
+                    <div class="col-sm-8">
+                        <span class="input-group-btn">
+                         <a id="lfm" data-input="thumbnai" data-preview="holder" class="lfm-btn btn btn-primary">
                            <i class="fa fa-picture-o"></i> Choose
                          </a>
-                         <a class="btn btn-warning remove-image">
-                         <i class="fa fa-remove"></i>Xóa
-                         </a>
-                       </span>
-                        <input id="thumbnail{{$i}}" class="form-control" type="text" name="images[]" value="{{$image}}" placeholder="Default Input">
 
-                        <img id="holder{{$i}}" src="{{asset($image)}}" style="margin-top:15px;max-height:100px;">
+                        </span>
+                        <input id="thumbnai" class="form-control" type="text" name="images" value="{{$cat->images}}" placeholder="Hình ảnh">
+
+                        <img id="holder" src="{{asset($cat->images)}}" style="margin-top:15px;max-height:100px;">
                     </div>
+
                 </div>
 
                 <div class="form-group">
@@ -71,6 +74,16 @@
             </form>
         </div>
     </div>
+
+    <script src="{{asset('/vendor/laravel-filemanager/js/lfm.js')}}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var domain = "http://localhost:81/duan.moi/authen/public/laravel-filemanager";
+            $('.lfm-btn').filemanager('image', {prefix: domain});
+
+        });
+    </script>
+
 
 
 

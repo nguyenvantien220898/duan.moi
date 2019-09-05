@@ -34,6 +34,17 @@
                         </select>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Homepage</label>
+                    <div class="col-sm-8">
+                        <select name="homepage">
+                            <option value="0">Không</option>
+                            <option value="1">Có</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Slug</label>
                     <div class="col-sm-8">
@@ -41,6 +52,17 @@
                     </div>
                 </div>
 
+
+
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Home Page</label>
+                    <div class="col-sm-8">
+                        <select name="homepage">
+                            <option value="0">Không hiển thị</option>
+                            <option value="1">Hiển thị</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Hình ảnh</label>
                     <div class="col-sm-8">
@@ -102,7 +124,7 @@
                 </div>
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Thông tin bổ sung</label>
-                    <div class="col-sm-8"><textarea name="additional_info" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{old('additional_info')}}</textarea></div>
+                    <div class="col-sm-8"><textarea name="additional_information" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{old('additional_information')}}</textarea></div>
                 </div>
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Đánh giá</label>
@@ -126,39 +148,7 @@
         $(document).ready(function () {
             var domain = "http://localhost:81/duan.moi/authen/public/laravel-filemanager";
             $('.lfm-btn').filemanager('image', {prefix: domain});
-            $('#plus-image').on('click', function (e) {
-                e.preventDefault(); // Đê không bị chuyển hướng của thẻ a có id: plus-image
-                var lfm_btn_length = $('.lfm-btn').length;
-                var lfm_id_next = lfm_btn_length + 1;
-                var html = '';
-                html += '<div class="form-group">\n' +
-                    '                    <label for="focusedinput" class="col-sm-2 control-label">Hình ảnh</label>\n' +
-                    '                    <div class="col-sm-8">\n' +
-                    '\n' +
-                    '                        <span class="input-group-btn">\n' +
-                    '                         <a id="lfm'+lfm_id_next+'" data-input="thumbnail'+lfm_id_next+'" data-preview="holder'+lfm_id_next+'" class="lfm-btn btn btn-primary">\n' +
-                    '                           <i class="fa fa-picture-o"></i> Choose\n' +
-                    '                         </a>\n' +
-                    '                         <a class="btn btn-warning remove-image">\n' +
-                    '                           <i class="fa fa-remove"></i> Xóa\n' +
-                    '                         </a>\n' +
-                    '                        </span>\n' +
-                    '                        <input id="thumbnail'+lfm_id_next+'" class="form-control" type="text" name="images[]" placeholder="Hình ảnh">\n' +
-                    '\n' +
-                    '                        <img id="holder'+lfm_id_next+'" style="margin-top:15px;max-height:100px;">\n' +
-                    '\n' +
-                    '                    </div>\n' +
-                    '\n' +
-                    '                </div>';
-                var box = $(this).closest('.form-group')
-                $(html).insertBefore(box);
-                var domain = "http://localhost:81/duan.moi/authen/public/laravel-filemanager";
-                $('.lfm-btn').filemanager('image', {prefix: domain});
-            });
-            $(body).on('click','.remove-image',function (e) {
-                e.preventDefault();
-                $(this).closest('.form-group').remove();
-            });
+
         });
     </script>
 @endsection

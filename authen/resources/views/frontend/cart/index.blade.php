@@ -161,8 +161,8 @@
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Total</th>
+                            <th>Giá SP</th>
+                            <th>Giá SL</th>
                             <th>Remove</th>
                         </tr>
                         </thead>
@@ -196,7 +196,7 @@
                                 <td class="invert">VND {{number_format(($product->price) * ($product->quantity),0,'.','.')}}</td>
                                 <td class="invert">
                                     <div class="rem">
-                                        <div class="close{{$i}}" data-id="{{$product->id}}">Remove</div>
+                                        <div class="close{{$i}}" data-id="{{$product->id}}">Xóa</div>
                                         @csrf
                                     </div>
                                     <script>
@@ -276,16 +276,16 @@
                 </div>
                 <div class="checkout-left">
                     <div class="checkout-left-basket">
-                        <h4><a href="{{url('/shop/payment')}}" style="color: white;">Continue to basket</a></h4>
+                        <h4><a href="{{url('/shop/payment')}}" style="color: white;">Thanh toán</a></h4>
                         <ul>
                             @foreach($cart_products as $product)
                                 <li>{{$product->name}} <i>-</i> <span>VND {{number_format(($product->price) * ($product->quantity),0,'.','.')}}</span></li>
                             @endforeach
-                            <li style="font-weight: bold">Total <i>-</i> <span>VND {{number_format($total_payment,0,'.','.')}}</span></li>
+                            <li style="font-weight: bold">Tổng tiền <i>-</i> <span>VND {{number_format($total_payment,0,'.','.')}}</span></li>
                         </ul>
                     </div>
                     <div class="checkout-right-basket">
-                        <a href="{{url('/')}}"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Continue Shopping</a>
+                        <a href="{{url('/')}}"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>Tiếp tục mua sắm</a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>

@@ -28,15 +28,18 @@ class MenuItemController extends Controller
         $this->middleware('auth:admin');
     }
     public function index(){
-        $items = DB::table('menu_items')->paginate(5);
 
-        $items=MenuItemModel::getMenuItemRecursive();
+//        $items = DB::table('menu_items')->paginate(5);
+
+        $items = MenuItemModel::getMenuItemRecursive();
+
 
         /**
          * Đây là biến truyền từ controller xuống view
          */
         $data=array();
         $data['menuitems']=$items;
+
 
         return view('admin.content.menuitem.index',$data);
 

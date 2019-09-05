@@ -60,7 +60,6 @@ class ContentCategoryController extends Controller
     public function store(Request $request){
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required',
             'images' => 'required',
             'intro' => 'required',
             'desc' => 'required',
@@ -106,7 +105,6 @@ class ContentCategoryController extends Controller
 
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'slug' => 'required',
             'images' => 'required',
             'intro' => 'required',
             'desc' => 'required',
